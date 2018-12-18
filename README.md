@@ -11,19 +11,36 @@ Linux and OSX already have the `cat` utility.
 cat <file>...
 ```
 
+## Installation
+
+1. Build the executable by following the instructions [here](#building-the-executable) or by downloading the
+pre-built `cat.exe` executable.
+2. Copy the `cat.exe` file to a folder you can add to your environment variables (e.g. `C:/bin`)
+3. Add that folder to your `%PATH%` environment variable.
+
+![edit-env-variable](images/edit-env-var.png)
+![edit-path-env-variable](images/edit-path-env-var.png)
+
 ## Example
 
 ### Printing a single file to standard output
 
 ```bash
-cat main.go
+cat file.txt
 ```
 
 
 ### Printing multiple files to standard output
 
 ```bash
-cat main.go README.md
+cat file.txt README.md
+```
+
+
+### Displaying the output line number
+
+```bash
+cat file.txt -n
 ```
 
 
