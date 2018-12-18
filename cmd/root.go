@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-
+var printLineNumber = false
 var rootCmd = &cobra.Command{
 	Use:   "cat",
 	Short: "Concatenate file(s) and print the result to standard output",
@@ -27,7 +27,7 @@ var rootCmd = &cobra.Command{
 			}
 		}
 		content := getFilesContent(files)
-		if showLineNumber {
+		if printLineNumber {
 			for i, line := range strings.Split(content, "\n") {
 				fmt.Printf("%4d  %s\n", i, line)
 			}
@@ -51,13 +51,12 @@ func getFilesContent(files []string) string {
 	return result
 }
 
-var showLineNumber = false
 
 func init() {
-	rootCmd.Flags().BoolVarP(&showLineNumber, "number", "n", false, "Print the number of each output line")
+	rootCmd.Flags().BoolVarP(&printLineNumber, "number", "n", false, "Print the number of each output line")
 }
+
 
 func Execute()  {
 	rootCmd.Execute()
 }
-
