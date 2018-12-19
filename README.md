@@ -4,6 +4,8 @@ A Go port of the popular 'cat' utility used to concatenate file(s) to standard o
 It can be compiled for most modern operating systems, but this is intended for use on Windows, since 
 Linux and OSX already have the `cat` utility.
 
+While Windows has the `type` command, it doesn't support the flags supported by `cat` and the goal of this project is to implement support for these flags.
+
 
 ## Usage
 
