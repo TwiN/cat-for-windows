@@ -3,22 +3,19 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 	"fmt"
-	"os"
 	"io/ioutil"
 	"strings"
 )
 
 var printLineNumber = false
 var rootCmd = &cobra.Command{
-	Use:   "cat",
+	Use:   "cat FILE...",
 	Short: "Concatenate file(s) and print the result to standard output",
 	Long:  "A Go port of the popular 'cat' command used to concatenate file(s) to standard output.",
-	Version: "0.0.1",
+	Example: "cat file1.txt file2.txt",
+	Version: "0.0.2",
+	Args: cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		if len(args) < 1 {
-			fmt.Println("USAGE: cat <file>...")
-			os.Exit(1)
-		}
 		var files []string
 		for _, arg := range args {
 			if strings.HasSuffix(arg, "-") {
