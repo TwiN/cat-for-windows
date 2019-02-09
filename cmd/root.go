@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/spf13/cobra"
 	"fmt"
+	"github.com/spf13/cobra"
 	"io/ioutil"
 	"strings"
 )
@@ -42,7 +42,7 @@ func getFilesContent(files []string) string {
 		if err != nil {
 			result += err.Error() + "\n"
 		} else {
-			result += string(content)
+			result += string(content) + "\n"
 		}
 	}
 	return result
